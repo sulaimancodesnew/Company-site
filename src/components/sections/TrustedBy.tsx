@@ -6,7 +6,7 @@ const TrustedBy = () => {
 
   return (
     <section className="relative  z-20 bg-white border border-dashed border-[#d8d8d8]">
-      <div className="py-8 px-4 sm:px-6 md:px-12">
+      <div className="py-12 px-4 sm:px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-10">
           <div className="flex items-start gap-3 text-[16px] leading-[24px] font-medium uppercase tracking-[0.01em] text-[#0a0a0a]">
             <Asterisk className="w-4 h-4 mt-1 text-[#0a0a0a]" />
