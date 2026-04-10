@@ -35,16 +35,48 @@ const timeline = [
   { year: "2025", title: "Industry Recognition", desc: "Named among top software agencies for innovation and delivery." },
 ];
 
-const technologies = {
-  frontend: ["React", "Next.js", "Vue", "Angular", "JavaScript", "jQuery"],
-  backend: ["Node.js", "Express", "PHP"],
-  cmsEcommerce: ["WordPress", "Shopify"],
-  automation: ["Make.com", "n8n", "Zapier", "GHL"],
-};
+const techGroups = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Next.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", dark: true },
+      { name: "Vue", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
+      { name: "Angular", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+      { name: "JavaScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "jQuery", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" },
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Express", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", dark: true },
+      { name: "PHP", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+    ],
+  },
+  {
+    title: "CMS & eCommerce",
+    items: [
+      { name: "WordPress", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+      { name: "Shopify", src: "https://cdn.jsdelivr.net/npm/simple-icons@11.15.0/icons/shopify.svg" },
+    ],
+  },
+  {
+    title: "Automation",
+    items: [
+      { name: "Make.com", src: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/make.svg", dark: true },
+      { name: "n8n", src: "/n8n-icon.webp", dark: true },
+      { name: "Zapier", src: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zapier.svg", dark: true },
+      { name: "GHL", src: "/ghl-logo.png", dark: false },
+    ],
+  },
+];
 
 const About = () => {
   return (
     <>
+      {/* ── Hero ── */}
       <section className="relative w-full h-[66vh] sm:h-[72vh] min-h-[430px] overflow-hidden">
         <div className="absolute inset-0">
           <video
@@ -67,13 +99,14 @@ const About = () => {
               elevate
             </h1>
             <p className="mt-4 text-white/90 text-[15px] sm:text-[20px] leading-[1.45] max-w-[560px]">
-              A Pakistan-based software partner for companies worldwide—strategy-led delivery, transparent communication,
-              and solutions built to scale.
+              A Pakistan-based software partner for companies worldwide—strategy-led delivery, transparent
+              communication, and solutions built to scale.
             </p>
           </div>
         </div>
       </section>
 
+      {/* ── Our Story ── */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
@@ -112,8 +145,8 @@ const About = () => {
                   <Target className="w-6 h-6 text-[#eb9f1c] mb-3" />
                   <h3 className="font-display font-semibold text-[#0a0a0a] mb-1">Mission</h3>
                   <p className="text-sm text-[#666]">
-                    Unleash your potential in the digital realm—empowering businesses through innovative IT solutions and
-                    cutting-edge technology for client success and growth.
+                    Unleash your potential in the digital realm—empowering businesses through innovative IT solutions
+                    and cutting-edge technology for client success and growth.
                   </p>
                 </div>
               </div>
@@ -122,6 +155,7 @@ const About = () => {
         </div>
       </section>
 
+      {/* ── Core Values ── */}
       <section className="py-16 sm:py-20 bg-[#f8f8f8]">
         <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="text-xs tracking-[0.2em] font-medium text-[#9c9c9c] flex items-center gap-3 mb-4">
@@ -141,16 +175,14 @@ const About = () => {
               return (
                 <div
                   key={v.title}
-                  className={`rounded-xl border p-5 sm:p-6 min-h-[220px] sm:min-h-[230px] flex flex-col ${
-                    isFeatured
+                  className={`rounded-xl border p-5 sm:p-6 min-h-[220px] sm:min-h-[230px] flex flex-col ${isFeatured
                       ? "bg-[#eb9f1c] border-[#eb9f1c] text-white"
                       : "bg-[#efeeed] border-[#e6e3df] text-[#141414]"
-                  }`}
+                    }`}
                 >
                   <div
-                    className={`h-9 w-9 rounded-lg flex items-center justify-center ${
-                      isFeatured ? "bg-white/95 text-[#111]" : "bg-white text-[#111]"
-                    }`}
+                    className={`h-9 w-9 rounded-lg flex items-center justify-center ${isFeatured ? "bg-white/95 text-[#111]" : "bg-white text-[#111]"
+                      }`}
                   >
                     <v.icon className="w-4 h-4" />
                   </div>
@@ -170,9 +202,11 @@ const About = () => {
         </div>
       </section>
 
+      {/* ── Technologies ── */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+            {/* Left: heading */}
             <div>
               <div className="text-xs tracking-[0.2em] font-medium text-[#9c9c9c] flex items-center gap-3 mb-4">
                 <span className="inline-flex h-[10px] w-[10px] bg-[#eb9f1c] rounded-full" />
@@ -190,28 +224,28 @@ const About = () => {
               </p>
             </div>
 
+            {/* Right: logo cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {(
-                [
-                  { title: "Frontend", items: technologies.frontend },
-                  { title: "Backend", items: technologies.backend },
-                  { title: "CMS & eCommerce", items: technologies.cmsEcommerce },
-                  { title: "Automation", items: technologies.automation },
-                ] as const
-              ).map((group) => (
+              {techGroups.map((group) => (
                 <div
                   key={group.title}
                   className="rounded-2xl border border-[#efe3cb] bg-[linear-gradient(180deg,#fffaf0_0%,#ffffff_100%)] p-5 sm:p-6"
                 >
-                  <h3 className="font-display font-semibold text-[#0a0a0a] mb-3">{group.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <span
-                        key={item}
-                        className="inline-flex items-center rounded-full border border-[#e6e0d6] bg-white px-3 py-1 text-[12px] font-medium text-[#0a0a0a]"
-                      >
-                        {item}
-                      </span>
+                  <h3 className="font-display font-semibold text-[#0a0a0a] mb-4">{group.title}</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {group.items.map((tech) => (
+                      <div key={tech.name} className="flex flex-col items-center gap-1.5 group/logo">
+                        <div className="w-10 h-10 rounded-lg border border-[#e6e0d6] bg-white flex items-center justify-center p-1.5 transition-transform duration-150 group-hover/logo:-translate-y-0.5">
+                          <img
+                            src={tech.src}
+                            alt={tech.name}
+                            width={24}
+                            height={24}
+                            className={`w-6 h-6 object-contain${tech.dark ? " dark:invert" : ""}`}
+                          />
+                        </div>
+                        <span className="text-[10px] font-medium text-[#666]">{tech.name}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -221,6 +255,7 @@ const About = () => {
         </div>
       </section>
 
+      {/* ── Our Journey ── */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20">
           <div className="text-xs tracking-[0.2em] font-medium text-[#9c9c9c] flex items-center gap-3 mb-4">
@@ -236,27 +271,19 @@ const About = () => {
 
           {/* Horizontal timeline — large screens */}
           <div className="hidden lg:block">
-            {/* Dots + connector row */}
             <div className="flex items-center mb-6">
               {timeline.map((item, i) => (
                 <div key={item.year} className="flex items-center flex-1 last:flex-none">
                   <div className="w-11 h-11 rounded-full bg-[#eb9f1c] text-[#111] text-xs font-bold flex items-center justify-center shrink-0">
                     {item.year}
                   </div>
-                  {i < timeline.length - 1 && (
-                    <div className="h-px flex-1 bg-[#e6e6e6] mx-1" />
-                  )}
+                  {i < timeline.length - 1 && <div className="h-px flex-1 bg-[#e6e6e6] mx-1" />}
                 </div>
               ))}
             </div>
-
-            {/* Content row */}
             <div className="flex">
-              {timeline.map((item, i) => (
-                <div
-                  key={item.year}
-                  className="flex-1 pr-6 last:pr-0"
-                >
+              {timeline.map((item) => (
+                <div key={item.year} className="flex-1 pr-6 last:pr-0">
                   <h3 className="font-display font-semibold text-[#0a0a0a] mb-1 text-sm">{item.title}</h3>
                   <p className="text-xs text-[#666] leading-relaxed">{item.desc}</p>
                 </div>
@@ -285,7 +312,7 @@ const About = () => {
       </section>
 
       <HomeResults />
-      <HomeTeam  />
+      <HomeTeam />
       <CTASection />
     </>
   );

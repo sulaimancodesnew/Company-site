@@ -1,6 +1,7 @@
 import Reveal from "../ui/Reveal";
 import AnimatedButton from "../ui/AnimatedButton";
 import heroBg from "@/assets/hero-bg.jpg";
+import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
@@ -20,7 +21,7 @@ const CTASection = () => {
       {/* Bottom border accent */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#eb9f1c]/30 to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6 md:px-12 lg:px-20">
+      <div className="relative z-10 mx-auto w-full  px-4 sm:px-6 md:px-12 lg:px-20">
 
         {/* Label */}
         <Reveal>
@@ -62,24 +63,24 @@ const CTASection = () => {
         {/* CTA row */}
         <Reveal delay={0.15}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <AnimatedButton to="/contact" size="lg" showArrow>
-              Discover more
-            </AnimatedButton>
+          <a
+                  href="/contact"
+                  className="animate-bottom-top inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-[#eb9f1c] text-white font-normal text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] transition-colors duration-200 hover:bg-[#eb9f1c]/90"
+                >
+                  <span className="button-children inline-flex items-center gap-2">
+                    Discover more
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </a>
             <a
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 text-white/60 text-[15px] font-medium transition-colors duration-200 hover:text-white"
-            >
-              View portfolio
-              <svg
-                className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+                  href="/about"
+                  className="animate-bottom-top inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-white/95 text-[#eb9f1c] font-normal text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] border border-[#eb9f1c] transition-colors duration-200 hover:bg-white"
+                >
+                  <span className="button-children inline-flex items-center gap-2">
+                    View portfolio
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </a>
           </div>
         </Reveal>
 

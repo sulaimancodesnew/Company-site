@@ -69,7 +69,7 @@ const Navbar = ({ variant = "fixed" }: { variant?: NavbarVariant }) => {
                 key={link.to}
                 to={link.to}
                 className={`text-sm font-medium transition-colors duration-300 ${
-                  location.pathname === link.to ? textColor : mutedColor
+                  location.pathname === link.to ? "text-[#ea9d1b]" : "text-white hover:text-[#ea9d1b]"
                 }`}
               >
                 {link.label}

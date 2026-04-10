@@ -15,6 +15,7 @@ import Stats from "@/components/sections/Stats";
 import CTASection from "@/components/sections/CTASection";
 import WhyUsScrollSection from "@/components/sections/WhyUsScrollSection";
 import CaseStudiesHero from "@/components/sections/CaseStudiesHero";
+import VideoTestimonials from "@/components/sections/Videotestimonial";
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
       <HomeResults />
       <HomeAwards />
       <HomeTeam />
+      <VideoTestimonials/>
       <HomeTestimonials />
       <HomeGetInTouch />
      

@@ -1,11 +1,11 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const socialItems = [
-  { label: "Facebook", href: "https://www.facebook.com/", abbr: "f" },
-  { label: "Instagram", href: "https://www.instagram.com/", abbr: "ig" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", abbr: "in" },
-  { label: "TikTok", href: "https://www.tiktok.com/", abbr: "tt" },
+  { label: "Facebook", href: "https://www.facebook.com/softechgenics?mibextid=ZbWKwL", abbr: "f" },
+  { label: "Instagram", href: "https://www.instagram.com/softechgenics", abbr: "ig" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/softechgenics/", abbr: "in" },
+  { label: "TikTok", href: "https://www.tiktok.com/@softechgenics", abbr: "tt" },
 ];
 
 const navItems = ["Home", "About", "Services", "Portfolio", "Testimonials", "Contact"];
@@ -33,7 +33,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-7 pb-7 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <div>
-            <div className="flex items-center gap-2 mb-6">
+          <div className="flex items-center gap-2 mb-6">
               {socialItems.map((item) => (
                 <a
                   key={item.label}
@@ -67,15 +67,38 @@ const Footer = () => {
                 </span>
               ))}
             </div>
+            <div className="mt-6 gap-6 sm:gap-16 text-[16px] text-white/70">
+              <b className="flex items-center gap-2 text-white">
+                <Clock className="w-4 h-4 text-[#ea9d1b]" />
+                Working hours:
+              </b>
+              <br />
+              Monday - Friday <br />
+              09am - 06pm (PKT)
+            </div>
           </div>
 
           <div className="lg:col-span-2">
             <div className="text-[28px] sm:text-[36px] md:text-[48px] leading-[1.05] font-medium tracking-[-0.02em] text-left lg:text-right break-all sm:break-normal">
-              hello@softechgenics.com
+              softechgenics@gmail.com
             </div>
             <div className="mt-6 flex flex-col sm:flex-row sm:justify-end gap-6 sm:gap-16 text-[16px] text-white/70">
-              <p className="text-left lg:text-right">Pakistan · Serving clients worldwide</p>
-              <p className="text-left lg:text-right">+92 300 8628415</p>
+              <p className="text-left">
+                <b className="text-white flex items-center gap-2">
+                  <span>🇵🇰</span> Pakistan
+                </b>
+                (Global Delivery Center) <br /> <br />
+                Trade Center, Bahawalpur <br />
+                63100, Punjab, Pakistan. <br /> <br />
+                +92 300 8628415
+              </p>
+              <p className="text-left">
+                <b className="text-white flex items-center gap-2">
+                  <span>🇨🇦</span> Canada
+                </b>
+                (Global Presence) <br /> <br />
+                60 Chisholm Street Unit 56,<br /> Orangeville, Ontario L9W 4P9, Canada <br /> <br />
+              </p>
             </div>
           </div>
         </div>
@@ -85,16 +108,16 @@ const Footer = () => {
             © {new Date().getFullYear()} Softechgenics. All rights reserved. Powered by Softechgenics.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 uppercase">
-            <a href="#" className="hover:text-[#ea9d1b] transition-colors duration-300">
+            <a href="/terms" className="hover:text-[#ea9d1b] transition-colors duration-300">
               Terms of use
             </a>
-            <a href="#" className="hover:text-[#ea9d1b] transition-colors duration-300">
+            <a href="/privacy" className="hover:text-[#ea9d1b] transition-colors duration-300">
               Privacy policy
             </a>
           </div>
         </div>
       </div>
-    </footer>
+    </footer> 
   );
 };
 

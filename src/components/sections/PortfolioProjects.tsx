@@ -2,7 +2,23 @@ import { ArrowUpRight } from "lucide-react";
 import { portfolioImages } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
-const [a, b, c, d, e, f, g, h, i, j] = portfolioImages;
+// All 11 images destructured
+const [a, b, c, d, e, f, g, h, i, j, k] = portfolioImages;
+
+// Live site URLs for all 11 images — update as needed
+const siteLinks = {
+  a: "https://705contracting.ca/",
+  b: "https://claymarelectric.ca/",
+  c: "https://bidm8.com/",
+  d: "https://gravelridge.ca/",
+  e: "https://masonsexteriorservices.ca/",       // Masons_Exterior
+  f: "https://your-site-f.com",       // Masons_exterior_builtreach
+  g: "https://bidm8.com/",            // bidm8_supplier
+  h: "https://your-site-h.com",       // builders_game_podcast
+  i: "https://homestand.pro/",
+  j: "https://trottergeneralcontracting.com/",
+  k: "https://troycluthesales.com/",       // troy_cluthe_sales
+};
 
 const CardShell = ({
   children,
@@ -21,23 +37,29 @@ const CardShell = ({
   </div>
 );
 
-const CaseStudyCta = () => (
-  <span className="inline-flex items-center gap-2 rounded-full bg-white pl-5 pr-1.5 py-1.5 text-sm font-semibold text-[#0a0a0a] shadow-lg">
-    View case study
+const CaseStudyCta = ({ href }: { href?: string }) => (
+  <a
+    href={href || "#"}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={(ev) => ev.stopPropagation()}
+    className="inline-flex items-center gap-2 rounded-full bg-white pl-5 pr-1.5 py-1.5 text-sm font-semibold text-[#0a0a0a] shadow-lg hover:bg-[#f5f5f5] transition-colors"
+  >
+    View live site
     <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0a0a0a] text-white">
       <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
     </span>
-  </span>
+  </a>
 );
 
 const ImageCard = ({
   item,
   className = "",
-  showCaseCta = true,
+  href,
 }: {
   item: (typeof portfolioImages)[number];
   className?: string;
-  showCaseCta?: boolean;
+  href?: string;
 }) => (
   <CardShell className={className}>
     <div className="absolute inset-0 bg-[#1a0f0a]" aria-hidden />
@@ -47,11 +69,9 @@ const ImageCard = ({
       className="relative z-[1] h-full w-full object-cover opacity-95 transition-transform duration-500 group-hover:scale-[1.04]"
     />
     <div className="absolute inset-0 z-[2] bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-80 pointer-events-none" />
-    {showCaseCta ? (
-      <div className="absolute inset-0 z-[3] flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
-        <CaseStudyCta />
-      </div>
-    ) : null}
+    <div className="absolute inset-0 z-[3] flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
+      <CaseStudyCta href={href} />
+    </div>
   </CardShell>
 );
 
@@ -74,50 +94,44 @@ const PortfolioProjects = () => {
             </p>
           </header>
 
+          {/*
+            Layout — all 11 images:
+            Left  (3): a · b · c
+            Center(4): d (tall) · e+f (2-col grid) · g
+            Right (4): h · i · j · k
+          */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-5">
-            {/* Left column */}
+
+            {/* Left column — 3 images */}
             <div className="flex flex-col gap-4 sm:gap-5 order-2 lg:order-1">
-              <ImageCard item={a} className="h-[200px] sm:h-[240px] lg:h-[220px]" />
-              <ImageCard item={b} className="h-[200px] sm:h-[240px] lg:h-[220px]" />
-              <ImageCard item={c} className="h-[160px] sm:h-[190px] lg:h-[180px]" />
+              <ImageCard item={a} className="h-[200px] sm:h-[240px] lg:h-[230px]" href={siteLinks.a} />
+              <ImageCard item={b} className="h-[200px] sm:h-[240px] lg:h-[230px]" href={siteLinks.b} />
+              <ImageCard item={c} className="h-[200px] sm:h-[240px] lg:h-[230px]" href={siteLinks.c} />
             </div>
 
-            {/* Center column — featured */}
+            {/* Center column — 4 images */}
             <div className="flex flex-col gap-4 sm:gap-5 order-1 lg:order-2">
-              <CardShell className="relative min-h-[300px] sm:min-h-[360px] lg:min-h-[400px] border-[#f0dcc4] bg-gradient-to-br from-[#ffd89e] via-[#ffc978] to-[#e8a855] shadow-md">
-                <img
-                  src={d.image}
-                  alt={d.alt}
-                  className="absolute inset-0 h-full w-full object-cover object-center opacity-[0.35] mix-blend-multiply transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 flex items-center justify-center p-6 z-[2] transition-transform duration-500 group-hover:scale-[1.02]">
-                  <div className="relative w-full max-w-[200px] sm:max-w-[240px] aspect-[9/18] rounded-2xl overflow-hidden shadow-2xl border border-white/30 rotate-[-4deg]">
-                    <img src={e.image} alt="" className="h-full w-full object-cover" />
-                  </div>
-                  <div className="absolute w-full max-w-[180px] sm:max-w-[200px] aspect-[9/18] rounded-2xl overflow-hidden shadow-xl border border-white/20 rotate-[6deg] translate-x-[28%] translate-y-[8%] opacity-95">
-                    <img src={f.image} alt="" className="h-full w-full object-cover" />
-                  </div>
-                </div>
-                <div className="absolute inset-0 z-[3] bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-90 pointer-events-none group-hover:opacity-100 transition-opacity" />
-                <div className="absolute inset-0 z-[4] flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out">
-                  <CaseStudyCta />
-                </div>
-              </CardShell>
+              {/* d — tall hero card */}
+              <ImageCard item={d} className="min-h-[300px] sm:min-h-[360px] lg:min-h-[400px]" href={siteLinks.d} />
 
+              {/* e + f — side by side */}
               <div className="grid grid-cols-2 gap-4 sm:gap-5">
-                <ImageCard item={g} className="h-[140px] sm:h-[160px]" />
-                <ImageCard item={h} className="h-[140px] sm:h-[160px]" />
+                <ImageCard item={e} className="h-[150px] sm:h-[170px]" href={siteLinks.e} />
+                <ImageCard item={f} className="h-[150px] sm:h-[170px]" href={siteLinks.f} />
               </div>
 
-              <ImageCard item={i} className="h-[180px] sm:h-[220px] lg:h-[200px]" />
+              {/* g */}
+              <ImageCard item={g} className="h-[190px] sm:h-[220px] lg:h-[200px]" href={siteLinks.g} />
             </div>
 
-            {/* Right column */}
+            {/* Right column — 4 images */}
             <div className="flex flex-col gap-4 sm:gap-5 order-3">
-              <ImageCard item={j} className="h-[200px] sm:h-[240px] lg:h-[220px]" />
-              <ImageCard item={b} className="h-[200px] sm:h-[240px] lg:h-[220px]" />
-              <ImageCard item={a} className="h-[200px] sm:h-[240px] lg:h-[220px]" />
+              <ImageCard item={h} className="h-[170px] sm:h-[200px] lg:h-[185px]" href={siteLinks.h} />
+              <ImageCard item={i} className="h-[170px] sm:h-[200px] lg:h-[185px]" href={siteLinks.i} />
+              <ImageCard item={j} className="h-[170px] sm:h-[200px] lg:h-[185px]" href={siteLinks.j} />
+              <ImageCard item={k} className="h-[170px] sm:h-[200px] lg:h-[185px]" href={siteLinks.k} />
             </div>
+
           </div>
         </div>
       </div>
