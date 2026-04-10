@@ -7,7 +7,7 @@ const testimonials = [
     name: "Nicholas Macdonell",
     role: "Founder, Builtreach",
     location: "Canada",
-    videoUrl: "/nick.mp4",
+    videoUrl: "/nick.MP4",
     quote: "Softechgenics delivered beyond our expectations. Our new site converts 3x better.",
     rating: 5,
   },
