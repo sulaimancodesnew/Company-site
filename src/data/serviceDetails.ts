@@ -4,6 +4,8 @@ import digitalMarketing from "@/assets/marketing.jpg";
 import seoContentWriting from "@/assets/seo.jpg";
 import websiteDevelopment from "@/assets/web_development.jpg";
 import maintenance from "@/assets/web_maintenance.jpg";
+import makelogo from "@/assets/make.webp";
+import zapierlogo from "@/assets/zapier-logo.png";
 
 export type ServiceSlug =
   | "website-development"
@@ -235,13 +237,13 @@ export const serviceDetails: Record<ServiceSlug, ServiceDetail> = {
     toolHighlights: [
       {
         name: "Make.com",
-        logoUrl: "https://logo.clearbit.com/make.com",
+        logoUrl: makelogo,
         description:
           "Offers seamless no-code integrations with thousands of popular apps. Instead of spending hours learning, building, and testing on your own, you can hire experts to get the job done quickly and efficiently.",
       },
       {
         name: "Zapier",
-        logoUrl: "https://logo.clearbit.com/zapier.com",
+        logoUrl: zapierlogo,
         description:
           "Zapier is a powerful online automation tool that connects various applications and services, enabling users to automate repetitive tasks and streamline their workflows without the need for coding knowledge.",
       },
