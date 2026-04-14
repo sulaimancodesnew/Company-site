@@ -55,11 +55,11 @@ const Navbar = ({ variant = "fixed" }: { variant?: NavbarVariant }) => {
           : "bg-transparent"
       }`}
     >
-      <div className="w-full px-8 md:px-12 lg:px-20">
+      <div className="w-full px-4 md:px-12 lg:px-20">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Softechgenics" className="h-10" />
+            <img src={logo} alt="Softechgenics" className=" w-[180px]" />
           </Link>
 
           {/* Center nav links */}
@@ -90,7 +90,7 @@ const Navbar = ({ variant = "fixed" }: { variant?: NavbarVariant }) => {
                 </Link>
           </div>
 
-          <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 ${textColor}`}>
+          <button onClick={() => setMobileOpen(!mobileOpen)} className={`lg:hidden p-2 text-white`}>
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>

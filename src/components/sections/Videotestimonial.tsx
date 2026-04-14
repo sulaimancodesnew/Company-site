@@ -13,9 +13,9 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Alek",
-    role: "Founder",
-    location: "London, UK",
+    name: "Alec",
+    role: "Founder, Sales Funnel",
+    location: "USA",
     videoUrl: "/Alek.MP4",
     quote: "The team was professional, fast, and genuinely cared about our brand identity.",
     rating: 5,
