@@ -55,7 +55,7 @@ const MarketingSection = () => {
 
       {/* ── Top row ── */}
       <div className="grid grid-cols-1 md:grid-cols-2 border-b border-gray-200">
-        <div className="px-8 sm:px-12 lg:px-16 py-14 md:border-r border-gray-200 flex flex-col justify-center">
+        <div className="sm:px-10 lg:px-16 md:border-r border-gray-200 flex flex-col justify-center">
           <p className="text-[80px] sm:text-[100px] lg:text-[120px] font-extrabold text-[#eb9f1c] leading-none tracking-tight">
             190+
           </p>
@@ -82,7 +82,7 @@ const MarketingSection = () => {
           return (
             <div
               key={s.n}
-              className="flex flex-col px-8 sm:px-6 lg:px-8 py-10 group"
+              className="flex flex-col sm:px-6 lg:px-8 py-4 group"
               style={{
                 transform: visible
                   ? "translateY(0)"

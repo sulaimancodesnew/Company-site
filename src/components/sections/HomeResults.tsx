@@ -24,7 +24,7 @@ const stats = [
 const HomeResults = () => {
   return (
     <section
-      className="w-full px-8 md:px-12 lg:px-20 py-16 md:py-20"
+      className="w-full px-5 md:px-12 lg:px-20 py-16 md:py-20"
       style={{
         background: "linear-gradient(180deg, #fff4df 0%, #fffaf2 45%, #ffffff 100%)",
       }}

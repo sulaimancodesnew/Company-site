@@ -131,7 +131,7 @@ const HomeServices = () => {
         containIntrinsicSize: "900px",
       }}
     >
-      <div className="w-full px-8 md:px-12 lg:px-20">
+      <div className="w-full px-5 md:px-12 lg:px-20">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <div>
             <div className="text-xs tracking-[0.2em] font-medium text-[#9c9c9c] flex items-center gap-3 mb-4">
