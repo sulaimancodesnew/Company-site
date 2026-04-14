@@ -4,6 +4,7 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 import CTASection from "@/components/sections/CTASection";
 import { Mail, Phone, MapPin, Clock, ChevronDown, ShieldCheck, BadgeCheck, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import portfolioBg from "@/assets/contact.jpg";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "hello@softechgenics.com" },
@@ -29,16 +30,12 @@ const Contact = () => {
     <>
       {/* Hero */}
       <section className="relative w-full h-[66vh] sm:h-[72vh] min-h-[430px] overflow-hidden">
-        <div className="absolute inset-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
+         <div className="absolute inset-0">
+          <img
+            src={portfolioBg}
+            alt=""
             className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-black/50" />
         </div>
 

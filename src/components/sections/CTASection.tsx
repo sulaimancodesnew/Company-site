@@ -73,7 +73,7 @@ const CTASection = () => {
                   </span>
                 </a>
             <a
-                  href="/about"
+                  href="/portfolio"
                   className="animate-bottom-top inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-white/95 text-[#eb9f1c] font-normal text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] border border-[#eb9f1c] transition-colors duration-200 hover:bg-white"
                 >
                   <span className="button-children inline-flex items-center gap-2">

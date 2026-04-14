@@ -5,25 +5,25 @@ const services = [
     n: "01",
     title: "Digital growth experts",
     desc: "Clear strategy and thoughtful execution come together to create digital experiences that feel intuitive, engaging.",
-    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
+    img: "/src/assets/softech.png",
   },
   {
     n: "02",
     title: "High-impact creative campaigns",
     desc: "Strategic thinking paired with creative craftsmanship results in digital solutions that are intuitive, impactful.",
-    img: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80",
+    img: "/src/assets/office.png",
   },
   {
     n: "03",
     title: "Lead generation campaigns",
     desc: "We blend clarity, creativity and structure to build digital experiences that connect with users.",
-    img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80",
+    img: "/src/assets/office2.png",
   },
   {
     n: "04",
     title: "Performance marketing services",
     desc: "Strong concepts and careful execution come together to form digital experiences that feel natural, polished and scalable.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
+    img: "/src/assets/office3.png",
   },
 ];
 
