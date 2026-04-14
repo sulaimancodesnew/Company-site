@@ -2,6 +2,8 @@ import teamImg from "@/assets/team/1.png";
 import teamImg2 from "@/assets/team/2.png";
 import teamImg3 from "@/assets/team/3.png";
 import teamImg4 from "@/assets/team/4.png";
+import teamImg5 from "@/assets/team/5.png";
+
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
@@ -18,6 +20,8 @@ const team = [
   { name: "Rehman Majeed", role: "Co-Founder" },
   { name: "Ahsan Riaz", role: "Project Lead" },
   { name: "Suhaib Nazir", role: "Full Stack Developer" },
+  { name: "Umair Khan", role: "Wordpress Developer" },
+
 ];
 
 const HomeTeam = () => {
@@ -122,4 +126,3 @@ const HomeTeam = () => {
 };
 
 export default HomeTeam;
-
