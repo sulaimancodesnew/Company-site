@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import websiteDevelopment from "@/assets/web_development.jpg";
 import appDevelopment from "@/assets/Mobile_app.jpg";
 import digitalMarketing from "@/assets/marketing.jpg";
@@ -13,6 +14,7 @@ type ServiceRow = {
   tags: string[];
   description: string;
   image: string;
+  detailPath: string;
 };
 
 const serviceRows: ServiceRow[] = [
@@ -31,6 +33,7 @@ const serviceRows: ServiceRow[] = [
     ],
     description:
       "Softechgenics crafts dynamic, user-friendly websites with modern technology to elevate your online presence and drive success.",
+    detailPath: "/services/website-development",
   },
   {
     title: "App",
@@ -47,6 +50,7 @@ const serviceRows: ServiceRow[] = [
     ],
     description:
       "Transform your digital landscape with tailored app development—built for clarity, speed, and impactful results.",
+    detailPath: "/services/app-development",
   },
   {
     title: "Digital",
@@ -63,6 +67,7 @@ const serviceRows: ServiceRow[] = [
     ],
     description:
       "Enhance your online presence with creative digital marketing that helps your brand stand out in competitive markets.",
+    detailPath: "/services/digital-marketing",
   },
   {
     title: "Automation",
@@ -79,6 +84,7 @@ const serviceRows: ServiceRow[] = [
     ],
     description:
       "Automation uses advanced technology to perform tasks reliably—reducing manual effort and increasing productivity across your stack.",
+    detailPath: "/services/automation-ai",
   },
   {
     title: "Website",
@@ -95,6 +101,7 @@ const serviceRows: ServiceRow[] = [
     ],
     description:
       "Keep operations smooth with maintenance—updates, optimization, and security checks so your site stays trustworthy worldwide.",
+    detailPath: "/services/website-maintenance",
   },
   {
     title: "SEO &",
@@ -111,6 +118,7 @@ const serviceRows: ServiceRow[] = [
     ],
     description:
       "Improve visibility with advanced SEO and clear content—so the right audience finds you and understands your value fast.",
+    detailPath: "/services/seo-content-writing",
   },
 ];
 
@@ -195,6 +203,7 @@ const HomeServices = () => {
                   <div className="text-sm sm:text-[14px] leading-[20px] text-[#555]">
                     {row.description}
                   </div>
+                  
                   <div className="relative mt-4 overflow-hidden">
                     <div className="flex flex-nowrap gap-2 py-2 w-max animate-tag-marquee">
                       {[...row.tags, ...row.tags].map((t, i) => (
@@ -206,6 +215,15 @@ const HomeServices = () => {
                         </span>
                       ))}
                     </div>
+                  </div>
+                  <div className="mt-4">
+                    <Link
+                      to={row.detailPath}
+                      className="animate-bottom-top inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-white/95 text-[#eb9f1c] font-normal text-[14px] sm:text-[16px] leading-[22px] sm:leading-[24px] border border-[#eb9f1c] transition-colors duration-200 hover:bg-white"
+                    >
+                      <span className="button-children inline-flex items-center gap-2">View Service Details</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </Link>
                   </div>
                 </div>
 
