@@ -24,13 +24,61 @@ const underlineInput =
   "w-full border-0 border-b border-[#d7d7d7] bg-transparent px-0 py-2.5 text-[15px] text-[#0a0a0a] placeholder:text-[#b0b0b0] focus:border-[#eb9f1c] focus:ring-0 focus:outline-none transition-colors";
 
 const Contact = () => {
+  const emailApiUrl = import.meta.env.VITE_EMAIL_API_URL || "http://localhost:4000/api/contact";
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const name = (formData.get("name") as string) || "";
+    const email = (formData.get("email") as string) || "";
+    const phone = (formData.get("phone") as string) || "";
+    const message = (formData.get("message") as string) || "";
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const res = await fetch(emailApiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+          category: "Contact Page Inquiry",
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send");
+      }
+
+      setSubmitted(true);
+      form.reset();
+      window.setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      console.error(err);
+      setError("We couldn't send your message. Please try again in a moment.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
       {/* Hero */}
       <section className="relative w-full h-[66vh] sm:h-[72vh] min-h-[430px] overflow-hidden">
-         <div className="absolute inset-0">
+      <div className="absolute inset-0">
           <img
             src={portfolioBg}
             alt=""
@@ -81,12 +129,14 @@ const Contact = () => {
                   </p>
                 </Reveal>
 
-                <form className="mt-8 space-y-7" onSubmit={(e) => e.preventDefault()}>
+                <form className="mt-8 space-y-7" onSubmit={handleSubmit}>
                   <Reveal delay={0.05}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-[#6b7280] mb-1">Full Name</label>
                         <input
+                          id="contact-name"
+                          name="name"
                           type="text"
                           placeholder="John Smith"
                           required
@@ -96,6 +146,8 @@ const Contact = () => {
                       <div>
                         <label className="block text-sm font-medium text-[#6b7280] mb-1">Email Address</label>
                         <input
+                          id="contact-email"
+                          name="email"
                           type="email"
                           placeholder="john@company.com"
                           required
@@ -107,8 +159,8 @@ const Contact = () => {
 
                   <Reveal delay={0.1}>
                     <div>
-                      <label className="block text-sm font-medium text-[#6b7280] mb-1">Company</label>
-                      <input type="text" placeholder="Your Company" className={underlineInput} />
+                      <label className="block text-sm font-medium text-[#6b7280] mb-1">Phone Number</label>
+                      <input id="contact-phone" name="phone" type="tel" placeholder="+92 300 0000000" className={underlineInput} />
                     </div>
                   </Reveal>
 
@@ -116,6 +168,8 @@ const Contact = () => {
                     <div>
                       <label className="block text-sm font-medium text-[#6b7280] mb-1">Project Details</label>
                       <textarea
+                        id="contact-message"
+                        name="message"
                         rows={5}
                         required
                         placeholder="Tell us about your project, goals, and timeline..."
@@ -126,9 +180,19 @@ const Contact = () => {
 
                   <Reveal delay={0.2}>
                     <AnimatedButton type="submit" size="lg" showArrow className="w-full">
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </AnimatedButton>
                   </Reveal>
+                  {submitted && (
+                    <p className="text-sm text-[#15803d]" role="status">
+                      Thanks - we&apos;ll be in touch soon.
+                    </p>
+                  )}
+                  {error && (
+                    <p className="text-sm text-red-600" role="alert">
+                      {error}
+                    </p>
+                  )}
                 </form>
               </div>
             </div>
