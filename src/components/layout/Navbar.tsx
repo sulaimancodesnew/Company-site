@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Portfolio", to: "/portfolio" },
   { label: "Services", to: "/services" },
   { label: "Testimonials", to: "/testimonials" },
-  { label: "Contact", to: "/contact" },
+  { label: "Contact", to: "/contact-us" },
 ];
 
 type NavbarVariant = "fixed" | "hero";

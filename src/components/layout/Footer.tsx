@@ -108,10 +108,10 @@ const Footer = () => {
             © {new Date().getFullYear()} Softechgenics. All rights reserved. Powered by Softechgenics.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 uppercase">
-            <a href="/terms" className="hover:text-[#ea9d1b] transition-colors duration-300">
+            <a href="/terms-condition" className="hover:text-[#ea9d1b] transition-colors duration-300">
               Terms of use
             </a>
-            <a href="/privacy" className="hover:text-[#ea9d1b] transition-colors duration-300">
+            <a href="/privacy-policy" className="hover:text-[#ea9d1b] transition-colors duration-300">
               Privacy policy
             </a>
           </div>
