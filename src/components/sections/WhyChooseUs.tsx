@@ -1,29 +1,34 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import office from "@/assets/softech.png"
+import office2 from "@/assets/office.png"
+import office3 from "@/assets/office2.png"
+import office4 from "@/assets/office3.png"
+
 const services = [
   {
     n: "01",
     title: "Digital growth experts",
     desc: "Clear strategy and thoughtful execution come together to create digital experiences that feel intuitive, engaging.",
-    img: "/src/assets/softech.png",
+    img: office,
   },
   {
     n: "02",
     title: "High-impact creative campaigns",
     desc: "Strategic thinking paired with creative craftsmanship results in digital solutions that are intuitive, impactful.",
-    img: "/src/assets/office.png",
+    img: office2,
   },
   {
     n: "03",
     title: "Lead generation campaigns",
     desc: "We blend clarity, creativity and structure to build digital experiences that connect with users.",
-    img: "/src/assets/office2.png",
+    img: office3,
   },
   {
     n: "04",
     title: "Performance marketing services",
     desc: "Strong concepts and careful execution come together to form digital experiences that feel natural, polished and scalable.",
-    img: "/src/assets/office3.png",
+    img: office4,
   },
 ];
 
