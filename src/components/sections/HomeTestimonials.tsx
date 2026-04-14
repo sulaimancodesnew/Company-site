@@ -37,7 +37,6 @@ import fiverrReviewImg35 from "@/assets/review screenshorts/34.png";
 import fiverrReviewImg36 from "@/assets/review screenshorts/35.png";
 import fiverrReviewImg37 from "@/assets/review screenshorts/36.png";
 import fiverrReviewImg38 from "@/assets/review screenshorts/37.png";
-import fiverrReviewImg39 from "@/assets/review screenshorts/38.png";
 import fiverrReviewImg40 from "@/assets/review screenshorts/39.png";
 import fiverrReviewImg41 from "@/assets/review screenshorts/40.png";
 import fiverrReviewImg42 from "@/assets/review screenshorts/41.png";
@@ -106,7 +105,6 @@ const HomeTestimonials = () => {
     { src: fiverrReviewImg36, alt: "Fiverr review screenshot" },
     { src: fiverrReviewImg37, alt: "Fiverr review screenshot" },
     { src: fiverrReviewImg38, alt: "Fiverr review screenshot" },
-    { src: fiverrReviewImg39, alt: "Fiverr review screenshot" },
     { src: fiverrReviewImg40, alt: "Fiverr review screenshot" },
     { src: fiverrReviewImg41, alt: "Fiverr review screenshot" },
     { src: fiverrReviewImg42, alt: "Fiverr review screenshot" },
@@ -183,7 +181,7 @@ const HomeTestimonials = () => {
                         loading="lazy"
                         decoding="async"
                       />
-                      <div
+                      {/* <div
                         className="absolute top-3 right-3 inline-flex h-7 w-7 items-center justify-center rounded-full shadow-sm border border-white/40"
                         style={{ background: "#1dbf73" }}
                         aria-label="Fiverr"
@@ -195,7 +193,7 @@ const HomeTestimonials = () => {
                             fill="#ffffff"
                           />
                         </svg>
-                      </div>
+                      </div> */}
                     </div>
                   </article>
                 ))}
