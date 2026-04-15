@@ -80,7 +80,7 @@ const Footer = () => {
 
           <div className="lg:col-span-2">
             <div className="text-[28px] sm:text-[36px] md:text-[48px] leading-[1.05] font-medium tracking-[-0.02em] text-left lg:text-right break-all sm:break-normal">
-              softechgenics@gmail.com
+              info@softechgenics.com
             </div>
             <div className="mt-6 flex flex-col sm:flex-row sm:justify-end gap-6 sm:gap-16 text-[16px] text-white/70">
               <p className="text-left">
@@ -90,7 +90,6 @@ const Footer = () => {
                 (Global Delivery Center) <br /> <br />
                 Trade Center, Bahawalpur <br />
                 63100, Punjab, Pakistan. <br /> <br />
-                +92 300 8628415
               </p>
               <p className="text-left">
                 <b className="text-white flex items-center gap-2">
